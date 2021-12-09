@@ -6,3 +6,7 @@ img{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr ;
 }
+.navbar{
+    height:70px;
+    width:  70px;
+}

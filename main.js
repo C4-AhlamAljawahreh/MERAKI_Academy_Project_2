@@ -8,6 +8,9 @@ const images=[{src:"./animal.jpg" ,alt:"animal picture", id:1 , title:"Rappit",d
                 {src:"./space1.jpg" ,alt:"space picture", id:2 ,title:"Graphic", discription:"graphic of earth from space"},
                 {src:"./space2.jpg" ,alt:"space picture", id:2 ,title:"Stars", discription:"space from dark earth "},
                 {src:"./space3.jpg" ,alt:"space picture", id:2 ,title:"Far Away", discription:"earth from satellite"},
+                {src:"./nature.jpg" ,alt:"Nature", id:3 ,title:"Nature", discription:"Nature"},
+                {src:"./nature0.jpg" ,alt:"Nature", id:3 ,title:"Nature", discription:"Nature "},
+                {src:"./nature1.jpg" ,alt:"Nature", id:3 ,title:"Nature", discription:"Nature"},
                 {src:"./space4.jpg" ,alt:"space picture", id:2 ,title:"Milky Way", discription:"milky way"}];
 const randomly = ()=>{
     randomNumber = Math.floor(Math.random()*20)
@@ -23,8 +26,8 @@ image.attr('alt',element.alt);
 const title = $('<h1></h1>')
 title.text(element.title);
 const disc= $('<p></p>');
+const fav=$()
 disc.text(element.discription);
-card.attr('order' , randomly());
 image.appendTo(card);
 title.appendTo(card);
 disc.appendTo(card);
