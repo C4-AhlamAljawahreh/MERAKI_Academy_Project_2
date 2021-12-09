@@ -31,3 +31,6 @@ disc.appendTo(card);
 card.appendTo(cards);
 });
 
+const muFav=[];
+
+
