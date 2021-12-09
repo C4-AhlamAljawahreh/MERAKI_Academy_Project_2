@@ -76,7 +76,7 @@ select{
 .categoires:hover .cat {
 display:block;
 }
-.cat h1{
+.cat h4{
     background-color:#013033;
     color:#9acfd3;
     padding:12px 16px;

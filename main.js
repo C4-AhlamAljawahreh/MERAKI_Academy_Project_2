@@ -14,7 +14,8 @@ const images=[{src:"./animal.jpg" ,alt:"animal picture", id:1 , title:"Rappit",d
                 {src:"./space4.jpg" ,alt:"space picture", id:2 ,title:"Milky Way", discription:"milky way"}];
 
 const cards =$(".cards");
-images.forEach((element) =>{
+const addedCards=(array)=>{
+array.forEach((element) =>{
 const card = $("<div class='image'></div>")
 const image=$('<img></img>')
 image.attr('id',element.id);
@@ -30,6 +31,12 @@ title.appendTo(card);
 disc.appendTo(card);
 card.appendTo(cards);
 });
+}
+addedCards(images);
+// const filtered=(e)=>{
+//     console.log(e)
+// }
+// add categories dropdown button 
 const categoires = $('<div class="categoires"></div>')
 const  list = $('<button class="list">Categoires</button>')
 const navBar = $('.navBar');
@@ -37,12 +44,19 @@ const cat = $('<div class="cat"></div>');
 categoires.appendTo(navBar);
 list.appendTo(categoires);
 cat.appendTo(list);
-const items= ['Animal','Space','Nature']
+const items= [{name:'Animal',id:1},{name:'Space',id:2},{name:'Nature',id:3}]
 items.forEach((element)=>{
-const item=$('<h1></h1>')
-item.text(element);
-
-// item.attr('href', "#")
+const item=$('<h4></h4>')
+item.text(element.name);
+item.on('click',()=>{
+const newImages =images.filter(ele=>{ // try to activate cetagories
+    return element.id == ele.id
+})
+// cards.hide();
+// return newImages;
+addedCards(newImages);
+console.log(newImages);
+});
 item.appendTo(cat)
 })
 
