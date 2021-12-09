@@ -5,8 +5,9 @@
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 img{
-    height: 300px;
-    width:  200px;
+    height: 350px;
+    width:  250px;
+    border-radius: 10px;
 }
 .cards{
     display: grid;
@@ -19,6 +20,7 @@ img{
 }
 .image{
     border: brown solid 1px;
+    border-radius: 10px;
     margin: 10px;
     padding:10px;
     
@@ -40,7 +42,43 @@ img{
     position:absolute;
     right:20px ;
     top:20px;
+    width:100px;
+    height:30px;
+    background-color:#013033;
+    color: #f9f9f9;
+    border:none;
 }
 h1 , p{
 color:#013033 ;
+}
+select{
+    height: 30px;
+    width: 100px;
+}
+.categoires{
+ display: inline-block;
+}
+.list{
+    font-size:large;
+    color:#f9f9f9;
+}
+.list:hover{
+    background-color:grey;
+}
+.categoires:hover .cat {
+display:block;
+}
+.cat a{
+    background-color:#013033;
+    color:#9acfd3;
+    padding:12px 16px;
+    text-decoration: none;
+    display: block;
+}
+.cat{
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 150px;
+  z-index: 1;
 }

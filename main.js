@@ -12,10 +12,7 @@ const images=[{src:"./animal.jpg" ,alt:"animal picture", id:1 , title:"Rappit",d
                 {src:"./nature0.jpg" ,alt:"Nature", id:3 ,title:"Nature", discription:"Nature "},
                 {src:"./nature1.jpg" ,alt:"Nature", id:3 ,title:"Nature", discription:"Nature"},
                 {src:"./space4.jpg" ,alt:"space picture", id:2 ,title:"Milky Way", discription:"milky way"}];
-const randomly = ()=>{
-    randomNumber = Math.floor(Math.random()*20)
-    return randomNumber;
-}
+const categories= []
 const cards =$(".cards");
 images.forEach((element) =>{
 const card = $("<div class='image'></div>")
