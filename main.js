@@ -12,7 +12,7 @@ const images=[{src:"./animal.jpg" ,alt:"animal picture", id:1 , title:"Rappit",d
                 {src:"./nature0.jpg" ,alt:"Nature", id:3 ,title:"Nature", discription:"Nature "},
                 {src:"./nature1.jpg" ,alt:"Nature", id:3 ,title:"Nature", discription:"Nature"},
                 {src:"./space4.jpg" ,alt:"space picture", id:2 ,title:"Milky Way", discription:"milky way"}];
-const categories= []
+
 const cards =$(".cards");
 images.forEach((element) =>{
 const card = $("<div class='image'></div>")
@@ -30,6 +30,21 @@ title.appendTo(card);
 disc.appendTo(card);
 card.appendTo(cards);
 });
+const categoires = $('<div class="categoires"></div>')
+const  list = $('<button class="list">Categoires</button>')
+const navBar = $('.navBar');
+const cat = $('<div class="cat"></div>');
+categoires.appendTo(navBar);
+list.appendTo(categoires);
+cat.appendTo(list);
+const items= ['Animal','Space','Nature']
+items.forEach((element)=>{
+const item=$('<h1></h1>')
+item.text(element);
+
+// item.attr('href', "#")
+item.appendTo(cat)
+})
 
 const muFav=[];
 
