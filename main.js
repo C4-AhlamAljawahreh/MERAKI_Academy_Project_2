@@ -71,6 +71,13 @@ const images = [
     discription: "queen lioness",
   },
   {
+    src: "./tourism3.jpg",
+    alt: "tourism",
+    id: 5,
+    title: "tourism",
+    discription: "tourism ",
+  },
+  {
     src: "./cartoon0.jpg",
     alt: "cartoon",
     id: 4,
@@ -83,6 +90,13 @@ const images = [
     id: 2,
     title: "Far Away",
     discription: "earth from satellite",
+  },
+  {
+    src: "./tourism2.jpg",
+    alt: "tourism",
+    id: 5,
+    title: "tourism",
+    discription: "tourism ",
   },
   {
     src: "./animal4.jpg",
@@ -99,6 +113,13 @@ const images = [
     discription: "earth from space",
   },
   {
+    src: "./tourism1.jpg",
+    alt: "tourism",
+    id: 5,
+    title: "tourism",
+    discription: "tourism ",
+  },
+  {
     src: "./cartoon2.jpg",
     alt: "cartoon",
     id: 4,
@@ -113,6 +134,13 @@ const images = [
     discription: "tiger with a sea ",
   },
   {
+    src: "./tourism0.jpg",
+    alt: "tourism",
+    id: 5,
+    title: "tourism",
+    discription: "tourism ",
+  },
+  {
     src: "./space5.jpg",
     alt: "space picture",
     id: 2,
@@ -125,6 +153,13 @@ const images = [
     id: 4,
     title: "cartoon",
     discription: "cartoon ",
+  },
+  {
+    src: "./tourism.jpg",
+    alt: "tourism",
+    id: 5,
+    title: "tourism",
+    discription: "tourism ",
   },
   {
     src: "./nature.jpg",
@@ -207,7 +242,6 @@ const addToDiv = (array, divName) => {
   });
 };
 addToDiv(images, cards);
-// addToDiv(myFav, myfav);
 // add Favorites list
 const navBar = $(".navBar");
 const favList = $('<div class="Favorite"></div>');
@@ -230,18 +264,20 @@ const cat = $('<div class="cat"></div>');
 categoires.appendTo(navBar);
 list.appendTo(categoires);
 cat.appendTo(list);
-const items = [
+const items = [   //array of cetagories
   { name: "All", id: 0 },
   { name: "Animal", id: 1 },
   { name: "Space", id: 2 },
   { name: "Nature", id: 3 },
   { name: "Cartoon", id: 4 },
+  { name: "Tourism", id: 5 }
 ];
 items.forEach((element) => {
   const item = $("<h4></h4>");
   item.text(element.name);
   item.on("click", () => {
     if (element.id == 0){
+      $('.image').remove();
       addToDiv(images, cards);
     }else{
       const newImages = images.filter((ele) => {

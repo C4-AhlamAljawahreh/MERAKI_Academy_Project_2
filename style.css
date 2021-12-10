@@ -60,10 +60,7 @@ h3 , p{
 color:#013033 ;
 line-height: 200%;
 }
-select{
-    height: 30px;
-    width: 100px;
-}
+
 .categoires{
  display: inline-block;
  
@@ -88,14 +85,18 @@ select{
     font-weight: 700;
     right:40px;
 }
-button:hover{
+button:hover {
     background-color:#9acfd3;
     color: #013033;
 }
-a:hover{
-    background-color:#05737a;
-
+h4:hover {
+    background-color:#9acfd3;
+    color: #013033;
 }
+h4{
+    font-weight: normal;
+}
+
 .categoires:hover .cat {
 display:block;
 }
@@ -103,9 +104,7 @@ display:block;
     background-color:#013033;
     color:#9acfd3;
     padding:12px 16px;
-    text-decoration: none;
     display: block;
-    
 }
 .cat{
   display: none;
@@ -113,5 +112,6 @@ display:block;
   background-color: #f9f9f9;
   z-index: 1;
 }
+
 
 
