@@ -9,7 +9,7 @@ img{
     width:  270px;
     border-radius: 10px;
 }
-.cards , .filtered{
+.cards , .filtered , .myfav{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr ;
     gap:10px;
@@ -47,6 +47,15 @@ img{
     background-color:#013033;
     border:none;
 }
+ .Favorite{
+    position:absolute;
+    right:200px ;
+    top:20px;
+    width:100px;
+    height:30px;
+    background-color:#013033;
+    border:none;
+}
 h3 , p{
 color:#013033 ;
 line-height: 200%;
@@ -59,7 +68,7 @@ select{
  display: inline-block;
  
 }
-button{
+.list {
     font-size:large;
     background-color:#013033;
     color:#9acfd3;
@@ -68,6 +77,15 @@ button{
     font-size: x-large;
     font-weight: 700;
     position: relative;
+    right:40px;
+}
+.fav {
+    font-size:large;
+    background-color:#013033;
+    color:#9acfd3;
+    border:none;
+    font-size: x-large;
+    font-weight: 700;
     right:40px;
 }
 button:hover{
@@ -95,8 +113,5 @@ display:block;
   background-color: #f9f9f9;
   z-index: 1;
 }
-.favorite{
-position:static;
-right:10px;
-}
+
 
