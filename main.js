@@ -191,6 +191,7 @@ const addToDiv = (array, divName) => {
     
     favorite.on("click", () => {
       myFav.push(element);
+      // localStorage.setItem("myFav", myFav);
       favorite.attr('style',"color:red;")
     });
     disc.text(element.discription);
@@ -213,9 +214,12 @@ const favList = $('<div class="Favorite"></div>');
 const fav = $('<button class="fav">Favorite</button>');
 favList.appendTo(navBar);
 fav.on("click", () => {
+ 
+  // myFav = localStorage.getItem("myFav");
+  
   $('.image').remove();
   addToDiv(myFav, myfav);
-  favorite.attr('style',"color:red;")
+  $('.favorite').attr('style',"color:red;")
 });
 fav.appendTo(favList);
 
@@ -239,17 +243,13 @@ items.forEach((element) => {
   item.on("click", () => {
     if (element.id == 0){
       addToDiv(images, cards);
-
     }else{
       const newImages = images.filter((ele) => {
-        // try to activate cetagories
         return element.id == ele.id;
       });
       $('.image').remove();
       addToDiv(newImages, filtered);
     }
-    
-  
   });
   item.appendTo(cat);
 });
