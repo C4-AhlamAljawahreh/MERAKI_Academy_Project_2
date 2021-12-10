@@ -1,5 +1,4 @@
-const images = [
-  // array of all photo with all properities
+const images = [    // array of all photo with all properities
   {
     src: "./animal.jpg",
     alt: "animal picture",
@@ -226,7 +225,11 @@ const addToDiv = (array, divName) => {
     
     favorite.on("click", () => {
       myFav.push(element);
-      // localStorage.setItem("myFav", myFav);
+       localStorage.setItem("src", element.src);
+       localStorage.setItem("alt", element.alt);
+       localStorage.setItem("id", element.id);
+       localStorage.setItem("title", element.title);
+       localStorage.setItem("disc", element.discription);
       favorite.attr('style',"color:red;")
     });
     disc.text(element.discription);
