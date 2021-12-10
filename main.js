@@ -211,6 +211,7 @@ const favList = $('<div class="Favorite"></div>');
 const fav = $('<button class="fav">Favorite</button>');
 favList.appendTo(navBar);
 fav.on("click", () => {
+  $('.image').remove();
   addToDiv(myFav, myfav);
 });
 fav.appendTo(favList);
@@ -236,6 +237,8 @@ items.forEach((element) => {
       // try to activate cetagories
       return element.id == ele.id;
     });
+    filtered.hide();
+    $('.image').remove();
     addToDiv(newImages, filtered);
   });
   item.appendTo(cat);
