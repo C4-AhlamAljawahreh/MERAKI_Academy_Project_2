@@ -205,12 +205,16 @@ const images = [
     discription: "Milky Way galaxy",
   },
 ];
+
 const myfavo= JSON.parse(localStorage.getItem("favorites"))
+// 3 divs in html .
 const cards = $(".cards");
 const myfav = $(".myfav");
 const filtered = $(".filtered");
-const addToDiv = (array, divName) => {
+
+
   // function to sort elements
+const addToDiv = (array, divName) => {
   array.forEach((element) => {
     const card = $("<div class='image'></div>");
     const image = $("<img></img>");
@@ -242,7 +246,8 @@ const addToDiv = (array, divName) => {
     divName.show();
   });
 };
-addToDiv(images, cards);
+// add main page with all picture using 'addToDiv' function 
+addToDiv(images, cards); 
 // add Favorites list
 const navBar = $(".navBar");
 const favList = $('<div class="Favorite"></div>');
@@ -250,9 +255,8 @@ const fav = $('<button class="fav">Favorite</button>');
 favList.appendTo(navBar);
 fav.on("click", () => {
  
-
+//clean all cards to add favorite list 
   $(".image").remove();
-  // addToDiv(myFav, myfav);
 
   myfavo.forEach((element) => {
     const card = $("<div class='image'></div>");
@@ -275,6 +279,7 @@ fav.on("click", () => {
         }
       })
       favorite.attr("style", "color:rgb(226, 66, 66);");
+      //to update myfavo in localStorage .
       localStorage.setItem("favorites", JSON.stringify(myfavo));
     });
     disc.text(element.discription);
@@ -318,6 +323,7 @@ items.forEach((element) => {
         return element.id == ele.id;
       });
       $(".image").remove();
+      // invoke function that sort every categorie 
       addToDiv(newImages, filtered);
     }
   });
