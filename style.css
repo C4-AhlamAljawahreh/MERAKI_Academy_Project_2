@@ -112,8 +112,9 @@ display:block;
   background-color: #f9f9f9;
   z-index: 1;
 }
-.favorite:hover{
+path:hover{
     color:rgb(226, 66, 66);
 }
+
 
 
