@@ -160,7 +160,7 @@ const images = [
     alt: "Arc de Triomphe",
     id: 5,
     title: "Arc de Triomphe",
-    discription: "'Arc de Triomphe' with sunset in France. ",
+    discription: "'Arc de Triomphe' with sunset in Paris. ",
   },
   {
     src: "./nature.jpg",
@@ -205,7 +205,7 @@ const images = [
     discription: "Milky Way galaxy",
   },
 ];
-let myFav = [];
+const myfavo= JSON.parse(localStorage.getItem("favorites"))
 const cards = $(".cards");
 const myfav = $(".myfav");
 const filtered = $(".filtered");
@@ -226,8 +226,8 @@ const addToDiv = (array, divName) => {
     </svg>`);
 
     favorite.on("click", () => {
-      myFav.push(element);
-      localStorage.setItem("favorites", JSON.stringify(myFav));
+     myfavo.push(element);
+      localStorage.setItem("favorites", JSON.stringify(myfavo));
       favorite.attr("style", "color:rgb(226, 66, 66) ;");
     });
     disc.text(element.discription);
@@ -253,7 +253,7 @@ fav.on("click", () => {
 
   $(".image").remove();
   // addToDiv(myFav, myfav);
- const myfavo= JSON.parse(localStorage.getItem("favorites"))
+
   myfavo.forEach((element) => {
     const card = $("<div class='image'></div>");
     const image = $("<img></img>");
@@ -269,13 +269,13 @@ fav.on("click", () => {
     </svg>`);
 
     favorite.on("click", () => {
-      myFav.forEach((ele,i)=>{
-        if (ele.discription === element.discription){
-          myFav.splice(i,1);
+      myfavo.forEach((ele,i)=>{
+        if (ele.title === element.title){
+          myfavo.splice(i,1);
         }
       })
       favorite.attr("style", "color:rgb(226, 66, 66);");
-      localStorage.setItem("favorites", JSON.stringify(myFav));
+      localStorage.setItem("favorites", JSON.stringify(myfavo));
     });
     disc.text(element.discription);
     image.appendTo(card);
