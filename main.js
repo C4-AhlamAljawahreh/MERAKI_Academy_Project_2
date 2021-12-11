@@ -49,6 +49,13 @@ const images = [
     title: "Rapunzel Tower",
     discription: "Rapunzel Tower from Tangled movie. ",
   },
+{
+  src: "./nature4.jpg",
+  alt: "WaterFall",
+  id: 3,
+  title: "WaterFall",
+  discription: "Niagara falls in Canada and NewYork .",
+},
   {
     src: "./animal5.jpg",
     alt: "Lama",
@@ -99,12 +106,20 @@ const images = [
     discription: "The Pyramids with camel in the desert in Egypt.",
   },
   {
+    src: "./cartoon5.jpg",
+    alt: "Elsa ",
+    id: 4,
+    title: "Elsa",
+    discription: "Elsa , queen of the ice  from Frozen movie  . ",
+  },
+  {
     src: "./animal6.jpg",
     alt: "Flamingo",
     id: 1,
     title: "Flamingo",
     discription: " Group of flamingo behind the lake.",
   },
+  
  
   {
     src: "./tourism1.jpg",
@@ -168,6 +183,13 @@ const images = [
     id: 3,
     title: "sunset",
     discription: "Sunset on the beach with seagull.",
+  },
+  {
+    src: "./tourism4.jpg",
+    alt: "Statua of Liberty",
+    id: 5,
+    title: "Statua of Liberty",
+    discription: "Statua of Liberty Monument in New York City USA. ",
   },
   {
     src: "./nature1.jpg",
