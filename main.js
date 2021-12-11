@@ -227,7 +227,6 @@ const addToDiv = (array, divName) => {
     favorite.on("click", () => {
       myFav.push(element);
       localStorage.setItem("favorites", JSON.stringify(myFav));
-      console.log(JSON.parse(localStorage.getItem("favorites")));
       favorite.attr("style", "color:red;");
     });
     disc.text(element.discription);
@@ -249,11 +248,43 @@ const favList = $('<div class="Favorite"></div>');
 const fav = $('<button class="fav">Favorite</button>');
 favList.appendTo(navBar);
 fav.on("click", () => {
-  // myFav = localStorage.getItem("myFav");
+ 
 
   $(".image").remove();
-  addToDiv(myFav, myfav);
-  $(".favorite").attr("style", "color:red;");
+  // addToDiv(myFav, myfav);
+ const myfavo= JSON.parse(localStorage.getItem("favorites"))
+  myfavo.forEach((element) => {
+    const card = $("<div class='image'></div>");
+    const image = $("<img></img>");
+    image.attr("id", element.id);
+    image.attr("src", element.src);
+    image.attr("alt", element.alt);
+    const title = $("<h3></h3>");
+    title.text(element.title);
+    const disc = $("<p></p>");
+    const favorite =
+      $(`<svg style="color: #013033;" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-x-circle-fill" viewBox="0 0 16 16">
+      <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z"/>
+    </svg>`);
+
+    favorite.on("click", () => {
+      myFav.forEach((ele,i)=>{
+        if (ele.discription === element.discription){
+          myFav.splice(i,1);
+        }
+      })
+      localStorage.setItem("favorites", JSON.stringify(myFav));
+    });
+    disc.text(element.discription);
+    image.appendTo(card);
+    title.appendTo(card);
+    disc.appendTo(card);
+    favorite.appendTo(card);
+    card.appendTo(myfav);
+    cards.hide();
+    filtered.hide();
+    myfav.show();
+  });
 });
 fav.appendTo(favList);
 
