@@ -222,7 +222,7 @@ const images = [
     alt: "Galaxy",
     id: 2,
     title: "Galaxy",
-    discription: "Milky Way galaxy",
+    discription: "Milky Way galaxy with a billion of stars.",
   },
 ];
 // array in local storage.
@@ -244,10 +244,11 @@ const addToDiv = (array, divName) => {
     const title = $("<h3></h3>");
     title.text(element.title);
     const disc = $("<p></p>");
-    const favorite =
-      $(`<svg style="color: #013033;" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="Favo" viewBox="0 0 16 16">
-      <path d="M4 1c2.21 0 4 1.755 4 3.92C8 2.755 9.79 1 12 1s4 1.755 4 3.92c0 3.263-3.234 4.414-7.608 9.608a.513.513 0 0 1-.784 0C3.234 9.334 0 8.183 0 4.92 0 2.755 1.79 1 4 1z"/>
-    </svg>`);
+    // const favorite =
+    //   $(`<svg style="color: #013033;" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="Favo" viewBox="0 0 16 16">
+    //   <path d="M4 1c2.21 0 4 1.755 4 3.92C8 2.755 9.79 1 12 1s4 1.755 4 3.92c0 3.263-3.234 4.414-7.608 9.608a.513.513 0 0 1-.784 0C3.234 9.334 0 8.183 0 4.92 0 2.755 1.79 1 4 1z"/>
+    // </svg>`);
+    const favorite =$(`<i class="fa-solid fa-heart"></i>`)
 
     favorite.on("click", () => {
      myfavo.push(element);
