@@ -226,8 +226,7 @@ const images = [
   },
 ];
 // array in local storage.
-let myfavo=[]
-myfavo= JSON.parse(localStorage.getItem("favorites"))
+const myfavo= JSON.parse(localStorage.getItem("favorites"))
 // 3 divs in html .
 const cards = $(".cards");
 const myfav = $(".myfav");
