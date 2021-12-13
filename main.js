@@ -422,11 +422,12 @@ items.forEach((element) => {
   });
   item.appendTo(cat);
 });
-// this array of object have all information about users 
+// this array of object have all information about users
 const users = [];
 $(".cards").hide();
 $(".filtered").hide();
 $(".myfav").hide();
+$(".list").hide();
 $(".register").hide();
 $(".toRegister").on("click", () => {
   $(".logIn").hide();
@@ -434,12 +435,11 @@ $(".toRegister").on("click", () => {
 });
 // register platform
 $(".submitReg").on("click", () => {
-
-  if ($(".registerPassword").val()!==$(".confairmPassword").val()){
-    const warning = $("<h4>Passwords Not Match</h4>")
-    warning.attr("style", "color:rgb(226, 66, 66);")
-    warning.appendTo($('.register'))
-  }else {
+  if ($(".registerPassword").val() !== $(".confairmPassword").val()) {
+    const warning = $("<h4>Passwords Not Match</h4>");
+    warning.attr("style", "color:rgb(226, 66, 66);");
+    warning.appendTo($(".register"));
+  } else {
     let obj = {
       userName: $(".registeruserName").val(),
       email: $(".registerEmail").val(),
@@ -447,12 +447,29 @@ $(".submitReg").on("click", () => {
       conPass: $(".confairmPassword").val(),
     };
     users.push(obj);
+    localStorage.setItem("users", JSON.stringify(users));
+    users1=JSON.parse(localStorage.getItem(users))
+    console.log(users1);
+
     $(".logIn").show();
-  $(".register").hide();
+    $(".register").hide();
   }
 });
-// login platform 
+// login platform
 $(".submit").on("click", () => {
-  console.log($(".Email").val());
-  users.forEach
+  users.forEach((element) => {
+    if (
+      ($(".Email").val() == element.email ||
+        $(".Email").val() == element.password) &&
+      $(".password").val() == element.password
+    ) {
+      $(".list").show();
+      addToDiv(images, cards);
+      $(".logIn").hide();
+    } else {
+      const warning = $("<h4>Password and UserName Not Match</h4>");
+      warning.attr("style", "color:rgb(226, 66, 66);");
+      warning.appendTo($(".logIn"));
+    }
+  });
 });
