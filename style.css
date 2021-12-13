@@ -96,7 +96,7 @@ display: inline-block;
 button:hover {
     background-color: var(--first-color);
     color: var(--second-color);
-    border:var(--second-color) solid;
+    border:var(--second-color);
 }
 h4:hover {
     background-color: var(--first-color);
@@ -109,19 +109,18 @@ h4{
 .categoires:hover .cat {
 display:block;
 }
-.cat ,h4{
+ h4{
     background-color:var(--second-color);
     color: var(--first-color);
     padding:12px 16px;
-    display: block;
 }
 .cat{
   display: none;
   position:absolute;
+  min-width: 160px;
   background-color:  var(--first-color);
   z-index: 1;
 }
-
 path:hover{    /* svg  */
     color:rgb(226, 66, 66);
 }
