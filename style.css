@@ -4,6 +4,10 @@
     box-sizing: border-box;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+:root{
+    --first-color:#b7d9db;
+    --second-color:#013033;
+}
 img{
     height:400px;
     width:  270px;
@@ -15,27 +19,30 @@ img{
     gap:10px;
     margin : 10px;
     padding: 10px 20px;
-    background-color: #b7d9db;
+    background-color: var(--first-color);
 
 }
 .image{
-    border: brown solid 2px;
+    border: rgb(100, 26, 26) solid 2px;
     border-radius: 10px;
     margin: 10px;
     padding:10px;
+    /* background-color:rgb(223, 198, 190); */
+    
 }
+
 .Gallery{
     position: absolute;
     top : 10px;
     left : 75px;
-    color:#9acfd3;
+    color: var(--first-color);
 }
 .logo{
     display:flex;
 }
 .navBar{
     position: sticky;
-    background-color: #013033;
+    background-color: var(--second-color);
     height: 70px;
 }
 .categoires{
@@ -44,7 +51,7 @@ img{
     top:20px;
     width:100px;
     height:30px;
-    background-color:#013033;
+    background-color:var(--second-color);
     border:none;
 }
 .Favorite{
@@ -53,22 +60,22 @@ img{
     top:20px;
     width:100px;
     height:30px;
-    background-color:#013033;
+    background-color:var(--second-color);
     border:none;
 }
 h3 , p{
-color:#013033 ;
+color:var(--second-color) ;
 line-height: 200%;
+opacity: 1;
 }
 
 .categoires{
- display: inline-block;
- 
+display: inline-block;
 }
 .list {
     font-size:large;
-    background-color:#013033;
-    color:#9acfd3;
+    background-color:var(--second-color);
+    color: var(--first-color);
     display: inline-block;
     border:none;
     font-size: x-large;
@@ -78,20 +85,20 @@ line-height: 200%;
 }
 .fav {
     font-size:large;
-    background-color:#013033;
-    color:#9acfd3;
+    background-color:var(--second-color);
+    color: var(--first-color);
     border:none;
     font-size: x-large;
     font-weight: 700;
     right:40px;
 }
 button:hover {
-    background-color:#9acfd3;
-    color: #013033;
+    background-color: var(--first-color);
+    color: var(--second-color);
 }
 h4:hover {
-    background-color:#9acfd3;
-    color: #013033;
+    background-color: var(--first-color);
+    color: var(--second-color);
 }
 h4{
     font-weight: normal;
@@ -101,15 +108,15 @@ h4{
 display:block;
 }
 .cat h4{
-    background-color:#013033;
-    color:#9acfd3;
+    background-color:var(--second-color);
+    color: var(--first-color);
     padding:12px 16px;
     display: block;
 }
 .cat{
   display: none;
   position:absolute;
-  background-color: #f9f9f9;
+  background-color:  var(--first-color);
   z-index: 1;
 }
 
