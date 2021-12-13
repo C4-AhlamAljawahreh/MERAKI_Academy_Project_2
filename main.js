@@ -307,6 +307,15 @@ const addToDiv = (array, divName) => {
 const navBar = $(".navBar");
 const favList = $('<div class="Favorite"></div>');
 const fav = $('<button class="fav">Favorite</button>');
+const LogOut = $('<div class="logOut"></div>');
+const out = $('<button class="out">logOut</button>');
+out.on('click',()=>{
+  location.reload(true);
+});
+out.appendTo(LogOut);
+LogOut.appendTo(navBar);
+
+
 // favList.appendTo(navBar);
 // fav.on("click", () => {
 
@@ -428,6 +437,7 @@ $(".cards").hide();
 $(".filtered").hide();
 $(".myfav").hide();
 $(".list").hide();
+$(".logOut").hide();
 $(".register").hide();
 $(".toRegister").on("click", () => {
   $(".logIn").hide();
@@ -436,7 +446,7 @@ $(".toRegister").on("click", () => {
 // register platform
 $(".submitReg").on("click", () => {
   if ($(".registerPassword").val() !== $(".confairmPassword").val()) {
-    const warning = $("<h4>Passwords Not Match</h4>");
+    const warning = $("<h5>Passwords Not Match</h5>");
     warning.attr("style", "color:rgb(226, 66, 66);");
     warning.appendTo($(".register"));
   } else {
@@ -448,9 +458,6 @@ $(".submitReg").on("click", () => {
     };
     users.push(obj);
     localStorage.setItem("users", JSON.stringify(users));
-    
-    // console.log(JSON.parse(localStorage.getItem("users")));
-
     $(".logIn").show();
     $(".register").hide();
   }
@@ -464,12 +471,12 @@ $(".submit").on("click", () => {
       $(".password").val() == element.password
     ) {
       $(".list").show();
+      $(".logOut").show();
       addToDiv(images, cards);
       $(".logIn").hide();
-    } else {
-      const warning = $("<h4>Password and UserName Not Match</h4>");
+    } 
+  });
+      const warning = $("<h5>Password and UserName Not Match</h5>");
       warning.attr("style", "color:rgb(226, 66, 66);");
       warning.appendTo($(".logIn"));
-    }
-  });
 });
