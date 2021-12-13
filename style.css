@@ -5,6 +5,9 @@
     font-family: Verdana, Geneva, Tahoma, sans-serif;
    
 }
+body{
+    overflow-x: hidden;
+}
 /* CSS custom properties */
 :root{
     --first-color:#b7d9db;
@@ -96,7 +99,8 @@ display: inline-block;
 button:hover {
     background-color: var(--first-color);
     color: var(--second-color);
-    border:var(--second-color);
+    border:var(--second-color) solid 1px;
+   
 }
 h4:hover {
     background-color: var(--first-color);
@@ -146,7 +150,6 @@ button{
     width: 200px;
     background-color:var(--second-color);
     color: var(--first-color);
-   
 }
 
 

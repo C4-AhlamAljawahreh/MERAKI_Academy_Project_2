@@ -258,7 +258,7 @@ const images = [
   },
 ];
 // array in local storage.
-const myFavo = JSON.parse(localStorage.getItem("favorites"));
+let myFavo= JSON.parse(localStorage.getItem("favorites"));
 // 3 divs in html .
 const cards = $(".cards");
 const myfav = $(".myfav");
@@ -301,12 +301,8 @@ const addToDiv = (array, divName) => {
     divName.show();
   });
 };
-// add main page with all picture using 'addToDiv' function
-// addToDiv(images, cards);
-// add Favorites list
+
 const navBar = $(".navBar");
-// const favList = $('<div class="Favorite"></div>');
-// const fav = $('<button class="fav">Favorite</button>');
 const LogOut = $('<div class="logOut"></div>');
 const out = $('<button class="out">logOut</button>');
 out.on('click',()=>{
@@ -314,11 +310,6 @@ out.on('click',()=>{
 });
 out.appendTo(LogOut);
 LogOut.appendTo(navBar);
-
-
-
-// fav.appendTo(favList);
-
 // add cetagories
 const categoires = $('<div class="categoires"></div>');
 const list = $('<button class="list">Categoires</button>');
@@ -392,7 +383,7 @@ items.forEach((element) => {
   item.appendTo(cat);
 });
 // this array of object have all information about users
-const users = JSON.parse(localStorage.getItem("users"));
+ const users= JSON.parse(localStorage.getItem("users"));
 $(".cards").hide();
 $(".filtered").hide();
 $(".myfav").hide();
@@ -432,6 +423,7 @@ $(".submit").on("click", () => {
     ) {
       $(".list").show();
       $(".logOut").show();
+      $(".image").remove();
       addToDiv(images, cards);
       $(".logIn").hide();
     } 
