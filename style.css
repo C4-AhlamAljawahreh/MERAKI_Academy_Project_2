@@ -3,6 +3,7 @@
     padding: 0px;
     box-sizing: border-box;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+   
 }
 /* CSS custom properties */
 :root{
@@ -122,6 +123,27 @@ display:block;
 
 path:hover{    /* svg  */
     color:rgb(226, 66, 66);
+}
+.logIn, .register{
+    display: grid;
+    grid-template-rows: 4fr;
+    background: var(--first-color);
+    gap: 20px;  
+    color:var(--second-color);
+    width: 400px;
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
+    padding: 20px;
+    border:var(--second-color) solid;
+}
+input{
+    height: 35px;
+    width: 300px;
+}
+button{
+    height: 35px;
+    width: 200px;
 }
 
 
