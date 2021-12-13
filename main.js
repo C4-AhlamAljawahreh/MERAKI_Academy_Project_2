@@ -423,7 +423,7 @@ items.forEach((element) => {
   item.appendTo(cat);
 });
 // this array of object have all information about users
-const users = [];
+const users = JSON.parse(localStorage.getItem("users"));
 $(".cards").hide();
 $(".filtered").hide();
 $(".myfav").hide();
@@ -448,8 +448,8 @@ $(".submitReg").on("click", () => {
     };
     users.push(obj);
     localStorage.setItem("users", JSON.stringify(users));
-    users1=JSON.parse(localStorage.getItem(users))
-    console.log(users1);
+    
+    // console.log(JSON.parse(localStorage.getItem("users")));
 
     $(".logIn").show();
     $(".register").hide();
