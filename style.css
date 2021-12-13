@@ -4,6 +4,7 @@
     box-sizing: border-box;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+/* CSS custom properties */
 :root{
     --first-color:#b7d9db;
     --second-color:#013033;
@@ -20,7 +21,6 @@ img{
     margin : 10px;
     padding: 10px 20px;
     background-color: var(--first-color);
-
 }
 .image{
     border: rgb(100, 26, 26) solid 2px;

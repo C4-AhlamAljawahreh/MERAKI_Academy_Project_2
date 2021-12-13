@@ -258,7 +258,7 @@ const images = [
   },
 ];
 // array in local storage.
-const myfavo= JSON.parse(localStorage.getItem("favorites"))
+const myFavo= JSON.parse(localStorage.getItem("favorites"))
 // 3 divs in html .
 const cards = $(".cards");
 const myfav = $(".myfav");
@@ -286,8 +286,8 @@ const addToDiv = (array, divName) => {
 
     favorite.on("click", () => {
     element.itsFav=true;
-     myfavo.push(element);
-      localStorage.setItem("favorites", JSON.stringify(myfavo));
+     myFavo.push(element);
+      localStorage.setItem("favorites", JSON.stringify(myFavo));
       favorite.attr("style", "color:rgb(226, 66, 66) ;");
      
     });
@@ -304,7 +304,7 @@ const addToDiv = (array, divName) => {
   });
 };
 // add main page with all picture using 'addToDiv' function 
-addToDiv(images, cards); 
+// addToDiv(images, cards); 
 // add Favorites list
 const navBar = $(".navBar");
 const favList = $('<div class="Favorite"></div>');
@@ -378,7 +378,7 @@ items.forEach((element) => {
       addToDiv(images, cards);
     }else if(element.id== 100){
       $(".image").remove();
-      myfavo.forEach((element) => {
+      myFavo.forEach((element) => {
         const card = $("<div class='image'></div>");
         const image = $("<img></img>");
         image.attr("id", element.id);
@@ -393,16 +393,16 @@ items.forEach((element) => {
         </svg>`);
     //favorite here to delete from favorite list and local storage .
         favorite.on("click", () => {
-          myfavo.forEach((ele,i)=>{
+          myFavo.forEach((ele,i)=>{
             if (ele.title === element.title){
               element.itsFav= false;
-              myfavo.splice(i,1);
+              myFavo.splice(i,1);
               
             }
           })
           favorite.attr("style", "color:rgb(226, 66, 66);");
           //to update myfavo in localStorage .
-          localStorage.setItem("favorites", JSON.stringify(myfavo));
+          localStorage.setItem("favorites", JSON.stringify(myFavo));
         });
         disc.text(element.discription);
         image.appendTo(card);
@@ -425,3 +425,6 @@ items.forEach((element) => {
   });
   item.appendTo(cat);
 });
+// const logIn = $('.logIn');
+// const userName =$('<input placeholder="User name "/>')
+// userName.appendTo(logIn);
