@@ -258,7 +258,7 @@ const images = [
   },
 ];
 // array in local storage.
-let myFavo= JSON.parse(localStorage.getItem("favorites"));
+let myFavo = JSON.parse(localStorage.getItem("favorites"));
 // 3 divs in html .
 const cards = $(".cards");
 const myfav = $(".myfav");
@@ -276,18 +276,18 @@ const addToDiv = (array, divName) => {
     title.text(element.title);
     const disc = $("<p></p>");
     const favorite =
-      $(`<svg style="color: #013033;" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="Favo" viewBox="0 0 16 16">
+      $(`<svg style="color: #330101;" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="Favo" viewBox="0 0 16 16">
       <path d="M4 1c2.21 0 4 1.755 4 3.92C8 2.755 9.79 1 12 1s4 1.755 4 3.92c0 3.263-3.234 4.414-7.608 9.608a.513.513 0 0 1-.784 0C3.234 9.334 0 8.183 0 4.92 0 2.755 1.79 1 4 1z"/>
     </svg>`);
     if (element.itsFav) {
-      favorite.attr("style", "color:rgb(226, 66, 66) ;");
+      favorite.attr("style", "color:rgb(219, 40, 40);");
     }
 
     favorite.on("click", () => {
       element.itsFav = true;
       myFavo.push(element);
       localStorage.setItem("favorites", JSON.stringify(myFavo));
-      favorite.attr("style", "color:rgb(226, 66, 66) ;");
+      favorite.attr("style", "color:rgb(219, 40, 40);");
     });
     disc.text(element.discription);
     image.appendTo(card);
@@ -305,7 +305,8 @@ const addToDiv = (array, divName) => {
 const navBar = $(".navBar");
 const LogOut = $('<div class="logOut"></div>');
 const out = $('<button class="out">logOut</button>');
-out.on('click',()=>{
+out.attr('style','font-size:small;')
+out.on("click", () => {
   location.reload(true);
 });
 out.appendTo(LogOut);
@@ -346,7 +347,7 @@ items.forEach((element) => {
         title.text(element.title);
         const disc = $("<p></p>");
         const favorite =
-          $(`<svg style="color: #013033;" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-x-circle-fill" viewBox="0 0 16 16">
+          $(`<svg style="color: #330101;" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-x-circle-fill" viewBox="0 0 16 16">
           <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z"/>
         </svg>`);
         //favorite here to delete from favorite list and local storage .
@@ -357,7 +358,7 @@ items.forEach((element) => {
               myFavo.splice(i, 1);
             }
           });
-          favorite.attr("style", "color:rgb(226, 66, 66);");
+          favorite.attr("style", "color:rgb(219, 40, 40);");
           //to update myfavo in localStorage .
           localStorage.setItem("favorites", JSON.stringify(myFavo));
         });
@@ -383,7 +384,7 @@ items.forEach((element) => {
   item.appendTo(cat);
 });
 // this array of object have all information about users
- const users= JSON.parse(localStorage.getItem("users"));
+const users = JSON.parse(localStorage.getItem("users"));
 $(".cards").hide();
 $(".filtered").hide();
 $(".myfav").hide();
@@ -426,9 +427,9 @@ $(".submit").on("click", () => {
       $(".image").remove();
       addToDiv(images, cards);
       $(".logIn").hide();
-    } 
+    }
   });
-      const warning = $("<h5>Password and UserName Not Match</h5>");
-      warning.attr("style", "color:rgb(226, 66, 66);");
-      warning.appendTo($(".logIn"));
+  const warning = $("<h5>Password and UserName Not Match</h5>");
+  warning.attr("style", "color:rgb(226, 66, 66);");
+  warning.appendTo($(".logIn"));
 });
