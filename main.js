@@ -258,7 +258,8 @@ const images = [
   },
 ];
 // array in local storage.
-let myFavo = JSON.parse(localStorage.getItem("favorites"));
+let myFavorite=[];
+// let myFavo = JSON.parse(localStorage.getItem("favorites"));
 // 3 divs in html .
 const cards = $(".cards");
 const myfav = $(".myfav");
@@ -285,8 +286,8 @@ const addToDiv = (array, divName) => {
 
     favorite.on("click", () => {
       element.itsFav = true;
-      myFavo.push(element);
-      localStorage.setItem("favorites", JSON.stringify(myFavo));
+      myFavorite.push(element);
+      localStorage.setItem("favorites", JSON.stringify(myFavorite));
       favorite.attr("style", "color:rgb(219, 40, 40);");
     });
     disc.text(element.discription);
@@ -316,10 +317,7 @@ $('.searchButton').on('click',()=>{
    }
   })
 })
-// const searchDiv = $('<div class="search"></div>')
-
-// const inputSearch = $('<input class ="inputSearch" placeholder="Search" type:"text"/>')
-//logOut button 
+//logOut Button 
 const LogOut = $('<div class="logOut"></div>');
 const out = $('<button class="out">logOut</button>');
 out.attr('style','font-size:small;')
@@ -328,7 +326,8 @@ out.on("click", () => {
 });
 out.appendTo(LogOut);
 LogOut.appendTo(navBar);
-// add cetagories
+
+// cetagories & favorite
 const categoires = $('<div class="categoires"></div>');
 const list = $('<button class="list">Categoires</button>');
 const cat = $('<div class="cat"></div>');
@@ -354,7 +353,10 @@ items.forEach((element) => {
       addToDiv(images, cards);
     } else if (element.id == 100) {
       $(".image").remove();
-      myFavo.forEach((element) => {
+      if (myFavorite.length==0){
+      myFavorite = JSON.parse(localStorage.getItem("favorites"));
+      }
+      myFavorite.forEach((element) => {
         const card = $("<div class='image'></div>");
         const image = $("<img></img>");
         image.attr("id", element.id);
@@ -369,15 +371,15 @@ items.forEach((element) => {
         </svg>`);
         //favorite here to delete from favorite list and local storage .
         favorite.on("click", () => {
-          myFavo.forEach((ele, i) => {
+          myFavorite.forEach((ele, i) => {
             if (ele.title === element.title) {
               element.itsFav = false;
-              myFavo.splice(i, 1);
+              myFavorite.splice(i, 1);
             }
           });
           favorite.attr("style", "color:rgb(219, 40, 40);");
           //to update myfavo in localStorage .
-          localStorage.setItem("favorites", JSON.stringify(myFavo));
+          localStorage.setItem("favorites", JSON.stringify(myFavorite));
         });
         disc.text(element.discription);
         image.appendTo(card);
@@ -401,7 +403,7 @@ items.forEach((element) => {
   item.appendTo(cat);
 });
 // users is an array of object have all information about users
-const users = JSON.parse(localStorage.getItem("users"));
+let users=[];
 $(".cards").hide();
 $(".filtered").hide();
 $(".myfav").hide();
@@ -428,12 +430,14 @@ $(".submitReg").on("click", () => {
     };
     users.push(obj);
     localStorage.setItem("users", JSON.stringify(users));
-    $(".logIn").show();
-    $(".register").hide();
+    location.reload(true);
   }
 });
 // login platform
 $(".submit").on("click", () => {
+  if(users.length==0){
+    users = JSON.parse(localStorage.getItem("users"));
+  }
   users.forEach((element) => {
     if (
       ($(".Email").val() == element.email ||
