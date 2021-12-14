@@ -303,6 +303,23 @@ const addToDiv = (array, divName) => {
 };
 
 const navBar = $(".navBar");
+// search input 
+$('.searchButton').on('click',()=>{
+  images.forEach((element)=>{
+    let title=element.title.toLowerCase();
+    let input = $('.inputSearch').val().toLowerCase();
+    const searchImages=[];
+   if (title == input){
+     searchImages.push(element);
+     $(".image").remove();
+     addToDiv(searchImages,filtered);
+   }
+  })
+})
+// const searchDiv = $('<div class="search"></div>')
+
+// const inputSearch = $('<input class ="inputSearch" placeholder="Search" type:"text"/>')
+//logOut button 
 const LogOut = $('<div class="logOut"></div>');
 const out = $('<button class="out">logOut</button>');
 out.attr('style','font-size:small;')
@@ -383,7 +400,7 @@ items.forEach((element) => {
   });
   item.appendTo(cat);
 });
-// this array of object have all information about users
+// users is an array of object have all information about users
 const users = JSON.parse(localStorage.getItem("users"));
 $(".cards").hide();
 $(".filtered").hide();
@@ -391,6 +408,7 @@ $(".myfav").hide();
 $(".list").hide();
 $(".logOut").hide();
 $(".register").hide();
+$('.search').hide();
 $(".toRegister").on("click", () => {
   $(".logIn").hide();
   $(".register").show();
@@ -424,6 +442,7 @@ $(".submit").on("click", () => {
     ) {
       $(".list").show();
       $(".logOut").show();
+      $(".search").show();
       $(".image").remove();
       addToDiv(images, cards);
       $(".logIn").hide();
