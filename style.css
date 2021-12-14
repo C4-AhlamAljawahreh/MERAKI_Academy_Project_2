@@ -7,7 +7,8 @@
 }
 body{
     overflow-x: hidden;
-    background-image: url(./image/back5.jpg);
+    background-image: url(./image/back.jpg);
+    background-size:cover;
    
 }
 /* @media(orientation: portrait){
@@ -29,18 +30,13 @@ img{
     transition: width 0.5s,height 0.5s , transform 2s;
     transition-delay: 0.5s;
 }
-/* img:hover{
-    height: 475px;
-    width: 320px;
-    transform :rotate(360deg);
-} */
 .cards , .filtered , .myfav{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr ;
     gap:10px;
     margin : 10px;
     padding: 10px 20px;
-    background: rgba(241, 188, 188, 0.548)
+    background: rgba(228, 204, 204, 0.226)
 }
 .image{
     border: rgb(100, 26, 26) solid 2px;
