@@ -90,7 +90,6 @@ img{
 color:teal;
 }
 .search{
-    /* position: absolute; */
     display: flex;
 }
 h3 , p{
@@ -182,13 +181,23 @@ border:rgb(100, 26, 26) solid 1px;
     left:240px;
 }
 /* to be responsive */
-@media (orientation: portrait){
+@media all and (max-width:600px){
     .cards , .filtered , .myfav{
         grid-template-columns: 4fr ;
     }
     img{
         height:500px;
-        width: 300px;
+        width:100%;
+    }
+   .search {
+        position:absolute;
+       left: 300px;
+        width: 100%;
+        background-color: var(--second-color);
+       z-index: 1;
+    } 
+    .navBar{
+        height: 140px;
     }
 }
 
