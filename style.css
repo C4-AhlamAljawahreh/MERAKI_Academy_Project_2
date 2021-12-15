@@ -5,18 +5,27 @@
     font-family: Verdana, Geneva, Tahoma, sans-serif;
    
 }
+:root{
+    --first-color:#cea8a8;
+    --second-color:#330101;
+    /* --first-color:white;
+    --second-color:rgb(41, 41, 41); */
+}
+
 body{
     overflow-x: hidden;
     background-image: url(./image/back.jpg);
     background-size:cover;
    
 }
+.DarkMode{
+    background-image: url(./image/dark.jpg);
+    --first-color:rgb(126, 123, 123);
+    --second-color:rgb(19, 19, 19);
+}
 
 /* CSS custom properties */
-:root{
-    --first-color:#cea8a8;
-    --second-color:#330101;
-}
+
 img{
     height:400px;
     width: 270px;
@@ -86,9 +95,9 @@ img{
     height:30px;
     background-color:var(white);
 }
-.searchButton:hover{
+/* .searchButton:hover{
 color:teal;
-}
+} */
 .search{
     display: flex;
 }
@@ -148,7 +157,7 @@ h4{
   z-index: 1;
 }
 path:hover{    /* svg  */
-    color:rgb(219, 40, 40);
+    color:white;
 }
 .logIn, .register{
     display: grid;
@@ -166,6 +175,10 @@ path:hover{    /* svg  */
 input{
     height: 35px;
     width: 300px;
+    background:var(--first-color);
+}
+::placeholder{
+    color:black;
 }
 button{
     height: 35px;
@@ -179,6 +192,14 @@ border:rgb(100, 26, 26) solid 1px;
 .Favo{
     position:relative;
     left:240px;
+}
+.Dark{
+        position:absolute;
+        right:270px ;
+        top:20px;
+        width:30px;
+        height:30px;
+        background-color:var(white);
 }
 /* to be responsive */
 @media all and (max-width:600px){
